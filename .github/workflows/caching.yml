@@ -1,0 +1,23 @@
+name: TDS GA 2 Q5 Caching
+
+on: [push]
+
+jobs:
+  cache-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Create prime file
+        run: echo "priming" > prime-file
+
+      - name: Cache prime file
+        id: cache-step-id
+        uses: actions/cache@v4
+        with:
+          path: prime-file
+          key: cache-f88004a
+
+      - name: prime-cache-f88004a
+        run: echo "${{ steps.cache-step-id.outputs.cache-hit }}"
