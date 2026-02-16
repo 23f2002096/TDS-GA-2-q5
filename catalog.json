@@ -157,6 +157,10 @@
     "sports": {
       "count": 2,
       "inventoryValue": 65699.27
+    },
+    "clothing": {
+      "count": 5,
+      "inventoryValue": 656.27
     }
   }
 }
